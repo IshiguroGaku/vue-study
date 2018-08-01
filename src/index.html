@@ -1,5 +1,7 @@
 <html>
     <head>
+			  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+			  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="./js/app1.js"></script>
         <script src="./js/components/upload.js"></script>
@@ -13,5 +15,31 @@
         <div class="file_upload">
             <upload></upload>
         </div>
+
+				<div id="example">
+				  <p>Original message: "{{ message }}"</p>
+				  <!-- <p>Computed reversed message: "{{ reversedMessage }}"</p> -->
+				  <p>Computed reversed message: "{{ reversedMessage() }}"</p>
+				</div>
+
+        <div id="demo">{{ fullName }}</div>
+				
+        <div id="watch-example">
+				  <p>
+				    Ask a yes/no question:
+				    <input v-model="question">
+				  </p>
+				  <p>{{ answer }}</p>
+				</div>
+
+       <div id="class_example">
+         <!-- <div v-bind:class="{ active: isActive }">hoge</div> -->
+				 <div v-bind:class="classObject"></div>
+       </div>
+
+       <div id="array_class_example">
+         <div v-bind:class="[activeClass, errorClass]"></div>
+         <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+       </div>
     </body>
 </html>
