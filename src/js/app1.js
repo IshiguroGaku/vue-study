@@ -123,4 +123,21 @@ document.addEventListener("DOMContentLoaded",function() {
 			  errorClass: 'text-danger'
 			}
      })
+
+     forExample = new Vue({
+       el: "#for_example",
+       data: {
+         items: [
+           {id: 1, val: "hoge"},
+	         {id: 2, val: "fuga"},
+         ]
+       },
+       computed: {
+         filteredItems: function () {
+					 return this.items.filter(function (item) {
+				     return item.id % 2 === 0
+				   })
+         }
+       }
+     })
 })
